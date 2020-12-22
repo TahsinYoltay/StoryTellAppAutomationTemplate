@@ -1,0 +1,59 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2020-12-19T20:40:14.486Z",
+        "line": 3,
+        "name": "",
+        "description": "",
+        "id": "landing-page-test;",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3000000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I open Storytel app",
+            "match": {
+              "location": "steps.LandingPage_Steps.i_open_storytel_app()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I Swipe stories to left and right and verify swiping works correctly",
+            "match": {
+              "location": "steps.LandingPage_Steps.i_swipe_stories_to_left_and_right_and_verify_swiping_works_correctly()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Click on Try it out button",
+            "match": {
+              "location": "steps.LandingPage_Steps.click_on_try_it_out_button()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Landing Page Test",
+    "description": "",
+    "id": "landing-page-test",
+    "keyword": "Feature",
+    "uri": "file:features/LandingPage.feature",
+    "tags": []
+  }
+]
