@@ -7,8 +7,6 @@ Framework Demo
  
 ### What do I need?
 
-This should download everything for you, but the following may be useful anyway:
-
 - Appium Desktop - https://github.com/appium/appium-desktop/releases/latest 
 - Android Studio (Allows you to install SDK and Emulators) - https://developer.android.com/studio/index.html
 - XCode - https://developer.apple.com/xcode/
