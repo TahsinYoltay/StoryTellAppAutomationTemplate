@@ -36,14 +36,6 @@ Not implemented
 
 --------------------------------------------------------------------
 
-### Compile Build or Run Tests
-
-Command Line
-
-cd to root ot automationFramework project directory
-
---------------------------------------------------------------------
-
 Getting Started
 --------------------------------------------------------------------
 
