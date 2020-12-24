@@ -3,9 +3,8 @@ StoryTellAppAutomationTemplate
 
 Framework Demo
 --------------------------------------------------------------------
-![Demo](https://eywasoft.s3.amazonaws.com/AndroidAutomationVideoGifV1.gif)
-!(GIF)[https://eywasoft.s3.amazonaws.com/AndroidAutomationVideoGifV1.gif]
-
+![Demo](https://github.com/TahsinYoltay/StoryTellAppAutomationTemplate/tree/master/doc/AndroidAutomationVideoGifV1.gif)
+ 
 ### What do I need?
 
 This should download everything for you, but the following may be useful anyway:
