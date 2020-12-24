@@ -1,6 +1,11 @@
 StoryTellAppAutomationTemplate
 --------------------------------------------------------------------
 
+Framwork Demo 
+--------------------------------------------------------------------
+![hippo](https://eywasoft.s3.amazonaws.com/AndroidAutomationVideoGifV1.gif)
+
+
 ### What do I need?
 
 This should download everything for you, but the following may be useful anyway:
