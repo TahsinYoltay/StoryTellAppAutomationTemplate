@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 /**
  * Created by IntelliJ IDEA.
  * User: TAHSIN YOLTAY
- * Date: 19/12/2020
+ * Date: 23/12/2020
  * Time: 22:51
  */
 public class CommonActions {

@@ -18,11 +18,17 @@ public class Driver {
         return Thread.currentThread().getName() + "-" + Thread.currentThread().getId();
     }
 
+    /**
+     * @param driver Android driver
+     */
     public static void add(WebDriver driver) {
         String threadName = getThreadName();
         driverThreadMap.put(threadName, driver);
     }
 
+    /**
+     * @return return current Android driver
+     */
     public static WebDriver current() {
         String threadName = getThreadName();
         return driverThreadMap.get(threadName);

@@ -8,7 +8,7 @@ Feature: Landing Page Test
     And I select “Iceland” and click “Done”
     And I select only “English” from languages selections page and click “Done”
     And I scroll down to find “Feelgood” text from Book tips page
-    And I Swipe left on “Feelgood” section books and click on the 7th item from the list
+    And I Swipe left on “Feelgood” section books and click on the "7" th item from the list
     And I Verify correct book is clicked
     And I Click like button
     And I Fill a valid email and password and click “Continue” button
@@ -20,7 +20,7 @@ Feature: Landing Page Test
     And I Open Side Menu
     And I Click Search button
     And I Swipe left to “Series” section
-    And I Search for “Harry”
+    And I Search for "Harry"
     And I Swipe up on search result to find “Advantures of Harry Stevenson” and click on it
     And I Verify that page is the correct page
     And I Click Filter

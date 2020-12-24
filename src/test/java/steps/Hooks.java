@@ -41,6 +41,7 @@ public class Hooks {
 
     @Before
     public void setUp() throws Exception {
+        System.out.println(Configuration.get("app"));
         System.out.println("Driver capabilities added to driver");
         DesiredCapabilities cap = new DesiredCapabilities();
         cap.setCapability(CapabilityType.BROWSER_NAME, "");

@@ -27,7 +27,7 @@ public class BookTip_Page extends BasePage {
      * Get Book Trip Page View id
      */
     public final By scroll = By.id("grit.storytel.app:id/booktipHorizontalTitle");
-
+    public String selectedBookName;
     @AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Feelgood\"]/androidx.recyclerview.widget.RecyclerView")
     public AndroidElement bounderies;
     @AndroidFindBy(id = "grit.storytel.app:id/btnBookshelfToggle")
@@ -36,34 +36,84 @@ public class BookTip_Page extends BasePage {
     public AndroidElement snackBar;
     @AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Feelgood\"]/androidx.recyclerview.widget.RecyclerView")
     public AndroidElement scrollView;
+    @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Feelgood\")")
+    public AndroidElement getFeelGoodSectionText;
+    @AndroidFindBy(id = "grit.storytel.app:id/textViewBookName")
+    public AndroidElement viewBookName;
 
     public BookTip_Page(WebDriver driver) {
         super(driver);
 
     }
 
+    /**
+     * Scroll down to Page
+     */
     public void setDropDownToFeelGood() {
         scrollNWClick(scroll, "Feelgood");
     }
 
-    public void getLocations() {
-        horizontalSwipes(7);
+    /**
+     * @param index horizontal left swipe. The Index will be the th item which will be the clicked one
+     */
+    public void getLocations(int index) {
+        horizontalSwipes(index);
     }
 
+    /**
+     * Click to like button in the related page
+     */
     public void clickLikeBtn() {
         likeBtn.click();
     }
 
 
+    /**
+     * After clicked the like button this method will be capture popup message
+     *
+     * @return pop-up message capture
+     */
     public String getSnackBarText() {
         return snackBar.getText();
     }
 
+    /**
+     * Android back button click
+     */
     public void goBack() {
         goBackBtn();
     }
 
+    /**
+     * @return boolean
+     * check Feel Good section is displayed or not
+     */
+    public boolean checkFeelGoodSection() {
+        boolean isDisplayed = getFeelGoodSectionText.isDisplayed();
+        return isDisplayed;
+    }
 
+    /**
+     * @return boolean
+     * Check selected book is correct or not
+     */
+    public boolean getSelectedBookName() {
+        boolean bookNameMathed;
+        if (viewBookName.getText().equalsIgnoreCase(selectedBookName)) {
+            bookNameMathed = true;
+        } else {
+            bookNameMathed = false;
+        }
+        return bookNameMathed;
+    }
+
+
+    /**
+     * Method
+     *
+     * @param index int
+     *              Horizontal swipe and click related index
+     */
     public void horizontalSwipes(int index) {
 
         WebElement Panel = bounderies;
@@ -94,6 +144,7 @@ public class BookTip_Page extends BasePage {
 
                     } else if (elementList.size() == index) {
                         Driver.current().findElement(new MobileBy.ByAccessibilityId(elementList.get(index - 1))).click();
+                        selectedBookName = elementList.get(index - 1);
                         flag = true;
                         break;
                     }
