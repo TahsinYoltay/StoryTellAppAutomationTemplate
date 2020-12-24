@@ -16,6 +16,7 @@ public class Configuration {
     private Configuration() {
     }
 
+
     public static void load() throws IOException {
         Configuration config = new Configuration();
         properties = new Properties();

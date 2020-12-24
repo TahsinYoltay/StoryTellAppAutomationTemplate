@@ -9,6 +9,7 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import util.Configuration;
 
+import java.io.File;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
@@ -43,6 +44,7 @@ public class Hooks {
     public void setUp() throws Exception {
         System.out.println(Configuration.get("app"));
         System.out.println("Driver capabilities added to driver");
+        File apkPath = new File(Configuration.get("app"));
         DesiredCapabilities cap = new DesiredCapabilities();
         cap.setCapability(CapabilityType.BROWSER_NAME, "");
         cap.setCapability("automationName", Configuration.get("automationName"));
@@ -50,7 +52,7 @@ public class Hooks {
         cap.setCapability("deviceName", Configuration.get("deviceName"));
         cap.setCapability("udid", Configuration.get("udid"));
         cap.setCapability("platformVersion", Configuration.get("platformVersion"));
-        cap.setCapability("app", Configuration.get("app"));
+        cap.setCapability("app", apkPath.getAbsolutePath());
         cap.setCapability("appPackage", Configuration.get("appPackage"));
         cap.setCapability("autoLaunch", true);
         cap.setCapability("fullReset", false);
