@@ -3,7 +3,7 @@ StoryTellAppAutomationTemplate
 
 Framwork Demo 
 --------------------------------------------------------------------
-![hippo](https://eywasoft.s3.amazonaws.com/AndroidAutomationVideoGifV1.gif)
+![Demo](https://eywasoft.s3.amazonaws.com/AndroidAutomationVideoGifV1.gif)
 
 
 ### What do I need?
