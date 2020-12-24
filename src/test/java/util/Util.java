@@ -6,6 +6,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.ios.IOSDriver;
@@ -209,8 +210,12 @@ public class Util {
         ((AppiumDriver<?>) Driver.current()).perform(ImmutableList.of(swipe));
     }
 
-    public static void click(By byEl) {
-        new WebDriverWait(Driver.current(), 20).until(ExpectedConditions.presenceOfElementLocated(byEl)).click();
+//    public static void click(By byEl) {
+//        new WebDriverWait(Driver.current(), 20).until(ExpectedConditions.presenceOfElementLocated(byEl)).click();
+//    }
+
+    public static void click(AndroidElement element) {
+        (new WebDriverWait(Driver.current(), 30)).until(ExpectedConditions.visibilityOf(element)).click();
     }
 
     public static void sendKeys(By byEl, String text) {

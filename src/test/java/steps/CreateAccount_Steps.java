@@ -40,6 +40,7 @@ public class CreateAccount_Steps {
      */
     @Then("I Click “No thanks” to Marketing Consent popup")
     public void i_click_no_thanks_to_marketing_consent_popup() {
+
         createAccout_page.setPopupNegativeBtn();
         createAccout_page.waitUntilElementisVisible();
 

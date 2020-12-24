@@ -5,6 +5,7 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import static util.Util.click;
 import static util.Util.exists;
 
 /**
@@ -47,7 +48,8 @@ public class CreateAccout_Page extends BasePage {
     }
 
     public void setPopupNegativeBtn() {
-        popupNegativeBtn.click();
+        click(popupNegativeBtn);
+//        popupNegativeBtn.click();
     }
 
     public void waitUntilElementisVisible() {
