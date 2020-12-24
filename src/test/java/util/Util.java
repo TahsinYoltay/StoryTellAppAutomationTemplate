@@ -3,27 +3,22 @@ package util;
 import com.google.common.collect.ImmutableList;
 import helper.Driver;
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
-
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.touch.WaitOptions;
-
 import io.appium.java_client.touch.offset.PointOption;
-import javafx.scene.layout.AnchorPane;
-import org.openqa.selenium.*;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Pause;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.awt.*;
 import java.awt.Point;
 import java.time.Duration;
 import java.util.HashMap;
@@ -38,7 +33,7 @@ public class Util {
 
     public static void scrollDown() {
         Dimension dimension = Driver.current().manage().window().getSize();
-        int scrollStart = (int) (dimension.getHeight() * 0.6);
+        int scrollStart = (int) (dimension.getHeight() * 0.7);
         int scrollEnd = (int) (dimension.getHeight() * 0.2);
 
         new TouchAction((PerformsTouchActions) Driver.current())
@@ -52,13 +47,10 @@ public class Util {
     /**
      * @param el     Web element (View&Screen) which will be calculated for bounds
      * @param driver Web driver
-     * @param xpath  xpath for element will be searched
      */
 
-
-    public static void horizontalSwipe(WebElement el, WebDriver driver, String xpath) {
-        WebElement Panel = el;
-        Dimension dimension = Panel.getSize();
+    public static void horizontalSwipeWXpath(WebElement el, WebDriver driver, String xpath) {
+        Dimension dimension = el.getSize();
 
         int Anchor = calculateAnchor(el);
         Double ScreenWidthStart = dimension.getWidth() * 0.8;
@@ -85,7 +77,6 @@ public class Util {
                         .release().perform();
         }
     }
-
 
     public static boolean exists(String element) {
         WebDriverWait wait = new WebDriverWait(Driver.current(), 1);
@@ -152,9 +143,6 @@ public class Util {
         String command = "new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(" + mySelector + ");";
         ((AndroidDriver<?>) Driver.current()).findElementByAndroidUIAutomator(command);
 
-        /*((AndroidDriver<MobileElement>) AppDriver.getDriver()).findElementByAndroidUIAutomator(
-                "new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().text(\"" + Text + "\").instance(0))").click();
-                */
     }
 
     /**
@@ -168,7 +156,7 @@ public class Util {
         if (Driver.current() instanceof AndroidDriver<?>) {
             scrollIntoView(Text);
         } else if (Driver.current() instanceof IOSDriver<?>) {
-            final HashMap<String, String> scrollObject = new HashMap<String, String>();
+            final HashMap<String, String> scrollObject = new HashMap<>();
             scrollObject.put("predicateString", "value == '" + Text + "'");
             scrollObject.put("toVisible", "true");
             ((IOSDriver<?>) Driver.current()).executeScript("mobile: scroll", scrollObject);
@@ -246,12 +234,9 @@ public class Util {
     }
 
     public static void SwipeScreen(WebElement el, WebDriver driver) throws InterruptedException {
-        WebElement Panel = el;
-        Dimension dimension = Panel.getSize();
+        Dimension dimension = el.getSize();
 
         int Anchor = calculateAnchor(el);
-//        int Anchor = Panel.getSize().getHeight()/2;
-//        Anchor=1161;
 
         Double ScreenWidthStart = dimension.getWidth() * 0.8;
         int scrollStart = ScreenWidthStart.intValue();
@@ -289,10 +274,9 @@ public class Util {
      */
 
     public static String getPassword() {
-        String password = new Random().ints(10, 33, 122).collect(StringBuilder::new,
+        return new Random().ints(10, 33, 122).collect(StringBuilder::new,
                 StringBuilder::appendCodePoint, StringBuilder::append)
                 .toString();
-        return password;
     }
 
     public static void goBackBtn() {

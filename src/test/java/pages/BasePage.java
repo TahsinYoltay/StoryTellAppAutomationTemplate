@@ -1,6 +1,5 @@
 package pages;
 
-import helper.Driver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;

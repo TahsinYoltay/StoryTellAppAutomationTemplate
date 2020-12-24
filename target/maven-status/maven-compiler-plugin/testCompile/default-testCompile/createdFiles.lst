@@ -1,5 +1,0 @@
-util/Configuration.class
-steps/LandingPage_Steps.class
-helper/Driver.class
-steps/Hooks.class
-testRunner/TestRunner.class

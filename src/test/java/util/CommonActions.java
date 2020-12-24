@@ -11,7 +11,7 @@ import org.openqa.selenium.WebDriver;
  */
 public class CommonActions {
 
-    WebDriver driver;
+    final WebDriver driver;
 
     public CommonActions(WebDriver driver) {
         this.driver = driver;
@@ -20,13 +20,10 @@ public class CommonActions {
     public void ScrollDown(String scrollableListString, String elementClassName, String text) {
 
         try {
-            String scrollableList = scrollableListString;
-            String elementClass = elementClassName;
-            String anyText = text;
 
             driver.findElement(MobileBy.AndroidUIAutomator(
-                    "new UiScrollable(new UiSelector().resourceId(\"" + scrollableList + "\")).getChildByText("
-                            + "new UiSelector().className(\"" + elementClass + "\"), \"" + anyText + "\")"));
+                    "new UiScrollable(new UiSelector().resourceId(\"" + scrollableListString + "\")).getChildByText("
+                            + "new UiSelector().className(\"" + elementClassName + "\"), \"" + text + "\")"));
         } catch (Exception e) {
             System.out.println("Cannot scroll further");
         }

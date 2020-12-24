@@ -1,7 +1,6 @@
 package helper;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -13,7 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class Driver {
 
-    private static ConcurrentHashMap<String, WebDriver> driverThreadMap = new ConcurrentHashMap<String, WebDriver>();
+    private static ConcurrentHashMap<String, WebDriver> driverThreadMap = new ConcurrentHashMap<>();
 
     public static String getThreadName() {
         return Thread.currentThread().getName() + "-" + Thread.currentThread().getId();
