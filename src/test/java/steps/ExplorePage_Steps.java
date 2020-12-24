@@ -13,7 +13,7 @@ import pages.Explore_Page;
  */
 public class ExplorePage_Steps {
 
-    Explore_Page explore_page = new Explore_Page(Driver.current());
+    final Explore_Page explore_page = new Explore_Page(Driver.current());
 
     @Then("I Swipe left to “Series” section")
     public void i_swipe_left_to_series_section() {

@@ -51,7 +51,7 @@ public class Configuration {
             }
         }
         String prefix = "";
-        String value = "";
+        String value;
         if (properties.containsKey("prefix")) {
             prefix = (String) properties.get("prefix");
         }

@@ -12,7 +12,7 @@ import pages.SideMenu_Page;
  */
 public class SideMenu_Steps {
 
-    SideMenu_Page sideMenu_page = new SideMenu_Page(Driver.current());
+    final SideMenu_Page sideMenu_page = new SideMenu_Page(Driver.current());
 
     @Then("I Open Side Menu")
     public void i_open_side_menu() {

@@ -27,9 +27,8 @@ import java.util.Random;
 public class Util {
 
     private static Dimension windowSize;
-    private static Duration SCROLL_DUR = Duration.ofMillis(1000);
-    private static double SCROLL_RATIO = 0.8;
-    private static int ANDROID_SCROLL_DIVISOR = 3;
+    private static final Duration SCROLL_DUR = Duration.ofMillis(1000);
+    private static final double SCROLL_RATIO = 0.8;
 
     public static void scrollDown() {
         Dimension dimension = Driver.current().manage().window().getSize();
@@ -53,11 +52,11 @@ public class Util {
         Dimension dimension = el.getSize();
 
         int Anchor = calculateAnchor(el);
-        Double ScreenWidthStart = dimension.getWidth() * 0.8;
-        int scrollStart = ScreenWidthStart.intValue();
+        double ScreenWidthStart = dimension.getWidth() * 0.8;
+        int scrollStart = (int) ScreenWidthStart;
 
-        Double ScreenWidthEnd = dimension.getWidth() * 0.2;
-        int scrollEnd = ScreenWidthEnd.intValue();
+        double ScreenWidthEnd = dimension.getWidth() * 0.2;
+        int scrollEnd = (int) ScreenWidthEnd;
 
 
         boolean flag = false;
@@ -199,6 +198,7 @@ public class Util {
         swipe.addAction(input.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), start.x, start.y));
         swipe.addAction(input.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
         if (isAndroid) {
+            int ANDROID_SCROLL_DIVISOR = 3;
             duration = duration.dividedBy(ANDROID_SCROLL_DIVISOR);
         } else {
             swipe.addAction(new Pause(input, duration));
@@ -238,11 +238,11 @@ public class Util {
 
         int Anchor = calculateAnchor(el);
 
-        Double ScreenWidthStart = dimension.getWidth() * 0.8;
-        int scrollStart = ScreenWidthStart.intValue();
+        double ScreenWidthStart = dimension.getWidth() * 0.8;
+        int scrollStart = (int) ScreenWidthStart;
 
-        Double ScreenWidthEnd = dimension.getWidth() * 0.2;
-        int scrollEnd = ScreenWidthEnd.intValue();
+        double ScreenWidthEnd = dimension.getWidth() * 0.2;
+        int scrollEnd = (int) ScreenWidthEnd;
         new TouchAction((PerformsTouchActions) driver)
                 .press(PointOption.point(scrollStart, Anchor))
                 .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(1)))

@@ -19,12 +19,7 @@ import java.util.List;
 
 import static util.Util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: TAHSIN YOLTAY
- * Date: 23/12/2020
- * Time: 21:04
- */
+
 public class BookTip_Page extends BasePage {
 
 
@@ -75,11 +70,11 @@ public class BookTip_Page extends BasePage {
         Dimension dimension = Panel.getSize();
 
         int Anchor = calculateAnchor(bounderies);
-        Double ScreenWidthStart = dimension.getWidth() * 0.8;
-        int scrollStart = ScreenWidthStart.intValue();
+        double ScreenWidthStart = dimension.getWidth() * 0.8;
+        int scrollStart = (int) ScreenWidthStart;
 
-        Double ScreenWidthEnd = dimension.getWidth() * 0.2;
-        int scrollEnd = ScreenWidthEnd.intValue();
+        double ScreenWidthEnd = dimension.getWidth() * 0.2;
+        int scrollEnd = (int) ScreenWidthEnd;
 
         WebElement viewGroup = scrollView;
 

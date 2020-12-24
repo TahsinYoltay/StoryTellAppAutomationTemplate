@@ -12,13 +12,13 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class Driver {
 
-    private static ConcurrentHashMap<String, WebDriver> driverThreadMap = new ConcurrentHashMap<>();
+    private static final ConcurrentHashMap<String, WebDriver> driverThreadMap = new ConcurrentHashMap<>();
 
     public static String getThreadName() {
         return Thread.currentThread().getName() + "-" + Thread.currentThread().getId();
     }
 
-    public static void add(WebDriver driver) throws Exception {
+    public static void add(WebDriver driver) {
         String threadName = getThreadName();
         driverThreadMap.put(threadName, driver);
     }

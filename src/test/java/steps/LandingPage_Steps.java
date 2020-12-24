@@ -14,7 +14,7 @@ import pages.Landingpage_Page;
  */
 public class LandingPage_Steps {
 
-    Landingpage_Page landingpage_page = new Landingpage_Page(Driver.current());
+    final Landingpage_Page landingpage_page = new Landingpage_Page(Driver.current());
 
 
     @Given("I open Storytel app")
@@ -25,7 +25,7 @@ public class LandingPage_Steps {
     }
 
     @When("I Swipe stories to left and right and verify swiping works correctly")
-    public void i_swipe_stories_to_left_and_right_and_verify_swiping_works_correctly() throws InterruptedException {
+    public void i_swipe_stories_to_left_and_right_and_verify_swiping_works_correctly() {
 //        landingpage_page.setItemList();
         landingpage_page.setItemList();
         System.out.println("Swipe functionality will be implemented");

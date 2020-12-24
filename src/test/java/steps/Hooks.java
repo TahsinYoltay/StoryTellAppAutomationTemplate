@@ -60,7 +60,7 @@ public class Hooks {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         Driver.current().quit();
     }
 
