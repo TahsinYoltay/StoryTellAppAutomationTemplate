@@ -42,12 +42,14 @@ public class Hooks {
 
     @Before
     public void setUp() throws Exception {
+
+
         System.out.println(Configuration.get("app"));
         System.out.println("Driver capabilities added to driver");
         File apkPath = new File(Configuration.get("app"));
         DesiredCapabilities cap = new DesiredCapabilities();
         cap.setCapability(CapabilityType.BROWSER_NAME, "");
-        cap.setCapability("automationName", Configuration.get("automationName"));
+//        cap.setCapability("automationName", Configuration.get("automationName"));
         cap.setCapability("platformName", Configuration.get("platformName"));
         cap.setCapability("deviceName", Configuration.get("deviceName"));
         cap.setCapability("udid", Configuration.get("udid"));

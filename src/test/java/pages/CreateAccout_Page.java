@@ -2,8 +2,10 @@ package pages;
 
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import util.Util;
 
 import static util.Util.click;
 import static util.Util.exists;
@@ -48,8 +50,8 @@ public class CreateAccout_Page extends BasePage {
     }
 
     public void setPopupNegativeBtn() {
+        Util.waitForEl(By.id("grit.storytel.app:id/button_negative"));
         click(popupNegativeBtn);
-//        popupNegativeBtn.click();
     }
 
     public void waitUntilElementisVisible() {

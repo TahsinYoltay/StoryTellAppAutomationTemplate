@@ -1,12 +1,10 @@
 package pages;
 
-import helper.Driver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebDriver;
 
 import static util.Util.goBackBtn;
-import static util.Util.horizontalSwipeWXpath;
 
 /**
  * Created by IntelliJ IDEA.
@@ -27,12 +25,14 @@ public class Explore_Page extends BasePage {
     public AndroidElement titleText;
     @AndroidFindBy(id = "grit.storytel.app:id/buttonFilter")
     public AndroidElement filterBtn;
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.view.ViewGroup/android.widget.LinearLayout[1]/android.widget.CheckBox[1]")
+    @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Ebook\")")
     public AndroidElement ebookCheckBtn;
     @AndroidFindBy(id = "grit.storytel.app:id/textViewNoResult")
     public AndroidElement filterErrorMessage;
     @AndroidFindBy(id = "grit.storytel.app:id/buttonDone")
     public AndroidElement doneBtn;
+    @AndroidFindBy(uiAutomator = "new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"Series\"))")
+    public AndroidElement tabBar;
 
     public Explore_Page(WebDriver driver) {
         super(driver);
@@ -43,8 +43,7 @@ public class Explore_Page extends BasePage {
     }
 
     public void setBarScroll() {
-        String xpath = "//android.widget.LinearLayout[@content-desc=\"Series\"]/android.widget.TextView";
-        horizontalSwipeWXpath(tabBarScroll, Driver.current(), xpath);
+        tabBar.click();
     }
 
     public void setAutomcompleatebar(String input) {
