@@ -31,6 +31,7 @@ Not implemented
 - JAVA: - Programming language
 - JUnit: - JUnit Java testing framework
 - Maven: - Build tool
+- Cluecumber Report: - Extended Report Plugin 
 
 --------------------------------------------------------------------
 
