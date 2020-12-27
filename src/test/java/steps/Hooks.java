@@ -13,12 +13,10 @@ import java.io.File;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by IntelliJ IDEA.
- * User: TAHSIN YOLTAY
- * Date: 19/12/2020
- * Time: 20:07
- */
+import static util.AppiumServer.Start;
+import static util.AppiumServer.Stop;
+
+
 public class Hooks {
 
 
@@ -43,7 +41,7 @@ public class Hooks {
     @Before
     public void setUp() throws Exception {
 
-
+        Start();
         System.out.println(Configuration.get("app"));
         System.out.println("Driver capabilities added to driver");
         File apkPath = new File(Configuration.get("app"));
@@ -66,6 +64,7 @@ public class Hooks {
 
     @After
     public void tearDown() {
+        Stop();
         Driver.current().quit();
     }
 

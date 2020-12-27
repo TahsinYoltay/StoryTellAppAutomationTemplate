@@ -22,7 +22,7 @@ public class AppiumServer {
     public static void Start() {
         if (isPortAvailable(4723)) {
             getInstance().start();
-            System.out.println("Server started from here!");
+            System.out.println("Appium Server started!");
         } else
             System.out.println("Server already running!");
     }
